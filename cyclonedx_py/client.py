@@ -287,8 +287,7 @@ class CycloneDxCmd:
 
         if self._arguments.input_from_environment:
             req_names: Optional[List[str]] = None
-            if self._arguments.input_from_requirements:
-                req_names = RequirementsParser(requirements_content=input_data).req_names
+            req_names = RequirementsParser(requirements_content=input_data).req_names
 
             return EnvironmentParser(use_purl_bom_ref=self._arguments.use_purl_bom_ref, pkg_filter=req_names)
 
